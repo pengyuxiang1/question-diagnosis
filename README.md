@@ -81,6 +81,8 @@ question-diagnosis/
 
 这也是它"越用越好"的部分：每排查完一个会复现的问题，归档一个案例、补一行索引，下次同类问题直接命中。
 
+> ⚠️ **升级备份**：`references/`（你的案例库）和 `tasks/`（进行中的排查）是你的积累，不在上游仓库里——`git pull` 更新本 skill 前先备份这两个目录。知识与 skill 完全解耦的做法见 SKILL.md「运行时知识沉淀」一节。
+
 ## 姊妹项目
 
 [**skillforge**](https://github.com/pengyuxiang1/skillforge) —— 生产这类 skill 的生产器。本 skill 就是被它改造出来的实例（有状态机、有引导、有门禁的"超级 skill"）。

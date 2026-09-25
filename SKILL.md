@@ -134,6 +134,25 @@ python3 .codebuddy/skills/question-diagnosis/scripts/flow_guide.py --list
 
 按问题现象判断领域，加载对应的 `references/{domain}-*.md` 文档（例：`pay-refund-timeout.md`、`gateway-502.md`）。领域手册建议包含：**关键词 → 路由表（问题类型 → reference） → 代码位置 → 快捷脚本**。
 
+## 🔒 运行时知识沉淀（本 skill 的记忆约定）
+
+> 本 skill 使用过程中积累的经验（排查案例、工具地图、踩坑记录）的存放位置。**未来会话据此知道经验往哪写、从哪读**。
+
+```
+知识目录：references/（skill 内部）
+├── references/{domain}-{issue}.md   # 归档案例（Step 6 产出）
+├── references/knowledge-map.md      # 现象 → 案例索引（归档时同步更新）
+└── references/tool-map.md           # 现象 → 工具决策（踩坑后回填）
+```
+
+三条约定：
+
+1. **新经验追加，不覆盖**：每次归档（Step 6）新增一个案例文件 + 在 knowledge-map 加一行，旧内容永不删改
+2. **skill 执行前先查索引**：排查任何问题前，先扫一眼 `knowledge-map.md` 命中历史经验，再决定是否从零开始
+3. **时效自检**：references 下的知识文件都带 `verified / stale_after` 时效标记——检索到过期内容时**先重新核对再用**，不要直接当可信知识
+
+⚠️ **升级注意**：若你通过 `git pull` / 重新安装更新本 skill，`references/` 下的案例是**你自己的积累**，不在上游仓库里——更新前备份 `references/` 与 `tasks/`（进行中的排查）。若希望知识与 skill 完全解耦（升级永不丢失），把上述三个路径整体外移到 `~/.question-diagnosis/` 并同步修改本节声明即可。
+
 ## 门禁 hook：怎么装
 
 `hooks/diagnosis-gate.js` 是与本 skill 配套的门禁脚本，覆盖两类问题：
