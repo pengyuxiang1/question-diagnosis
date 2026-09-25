@@ -87,6 +87,8 @@ question-diagnosis/
 
 [**skillforge**](https://github.com/pengyuxiang1/skillforge) —— 生产这类 skill 的生产器。本 skill 就是被它改造出来的实例（有状态机、有引导、有门禁的"超级 skill"）。
 
+配套公众号文章：[《一文讲透：怎么从 openspec 蒸馏出通用的超级 skill》](https://mp.weixin.qq.com/s/rzirIqbdM-SM01zxMIxFlg)——本 skill 作为实验案例出场的完整方法论叙事。
+
 ## License
 
 MIT
